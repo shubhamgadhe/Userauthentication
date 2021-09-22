@@ -1,0 +1,142 @@
+<html>
+<head>
+	<title>Userlogin</title>
+
+	<style>
+			#valid-name
+			{
+				background-color: red;
+				color:white;
+			}
+			#valid-login
+			{
+				background-color: red;
+				color:white;
+			}
+			#valid-email
+			{
+				background-color: red;
+				color:white;
+			}
+			#valid-password
+			{
+				background-color: red;
+				color:white;
+			}
+
+			#userui
+			{
+				 text-align: center;
+				 margin-left: 475px;
+				 margin-top: 75px;
+				 border:0.5px solid gray;
+				 width:350px;
+				 height:300px;
+				 border-radius: 10px;
+
+			}
+			#header
+			{
+
+			}
+			#footer
+			{
+
+			}
+
+	</style>
+</head>
+	<body>
+
+		<div id="userui">
+			<div id="header">
+
+		<h1>User Authentication</h1>
+		<form>
+			Username : <input type="text" id="name"> <span id="valid-name"></span><br><br>
+					  
+			Email-ID : <input type="email" id="email"><span id="valid-email"></span><br><br>
+					   
+			password : <input type="password" id="password"> <span id="valid-password"></span><br><br>
+					  
+					   <button onclick="autheticate()">Login</button> <span id="valid-login"></span>
+					
+
+					<div id="header">  
+		</div>
+
+
+	    <script>
+
+	    	
+
+	    	
+
+			function  autheticate()
+			{	
+				 event.preventDefault();
+
+				 var name=document.getElementById("name").value;
+	    		 var email=document.getElementById("email").value;
+	    		 var password=document.getElementById("password").value;
+	    		 var valid_name=document.getElementById("valid-name");
+
+	    		 var valid_name=document.getElementById("valid-name");
+				 var valid_password=document.getElementById("valid-password");
+				 var valid_email=document.getElementById("valid-email");
+	    		 var valid_login=document.getElementById("valid-login");
+
+				 var userValid=/[a-zA-Z]/;
+				 var emailValid=/[@.]/;
+				 var passwordValid=/[1-9]/;
+
+				 if(name && email && password)
+				 {
+				 	 if(!userValid.test(name))
+				 	 {
+						valid_name.innerHTML="Username must be in  Charater only";
+					 }
+					 if(!emailValid.test(email))
+				 	 {
+						valid_email.innerHTML="Enter Correct Email-id";
+					 }
+					 if(!passwordValid.test(password))
+				 	 {
+						valid_password.innerHTML="Password must be Number";
+					 }
+ 				 }
+				else
+				{
+					valid_login.innerHTML="Error : No Empty Field Allowed";
+				} 
+
+
+			}
+			
+
+		</script>
+	</form>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+		</form>
+
+
+
+	
+
+
+</body>
+</html>
+
